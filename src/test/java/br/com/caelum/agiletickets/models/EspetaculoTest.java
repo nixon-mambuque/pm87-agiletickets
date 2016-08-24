@@ -101,7 +101,7 @@ public class EspetaculoTest {
 		
 		LocalDate inicio = LocalDate.now();
 		LocalTime horario = LocalTime.now();
-		LocalDate fm = LocalDate.now() ;
+		LocalDate fim = LocalDate.now() ;
 		//DateTime horarioSessao = inicio.toDateTime(horario);
 		
 		Espetaculo espetaculo = new Espetaculo();
