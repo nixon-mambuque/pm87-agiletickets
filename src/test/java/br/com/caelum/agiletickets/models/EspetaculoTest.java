@@ -96,7 +96,7 @@ public class EspetaculoTest {
 		
 	}
 	
-	@Test 
+	@Test (expected = IllegalArgumentException.class)
 	public void dataIgualADataFim(){
 		
 		LocalDate inicio = LocalDate.now();
@@ -107,7 +107,11 @@ public class EspetaculoTest {
 		Espetaculo espetaculo = new Espetaculo();
 		List<Sessao> criaSessoes = espetaculo.criaSessoes(inicio, fim, horario, Periodicidade.DIARIA);
 		
-		assertEquals(1, criaSessoes.size());
+		//assertEquals(1, criaSessoes.size());
+		
+	}
+	@ Test
+	public void dataInicioNaoPodeSerPosteriorADataFim(){
 		
 	}
 	
