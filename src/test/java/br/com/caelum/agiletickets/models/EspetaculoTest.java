@@ -3,7 +3,16 @@ package br.com.caelum.agiletickets.models;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Calendar;
+import java.util.List;
+
+import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
+import org.junit.Assert;
 import org.junit.Test;
+
+import br.com.caelum.agiletickets.controllers.EspetaculosController;
 
 public class EspetaculoTest {
 
@@ -73,6 +82,20 @@ public class EspetaculoTest {
 		assertFalse(ivete.Vagas(5, 3));
 	}
 
+	@Test(expected = IllegalArgumentException.class)
+	public void dataDeInicioNaoPodeSerAnteriorADataActual(){
+		
+		LocalDate inicio = LocalDate.now();
+		LocalTime horario = LocalTime.now();
+		LocalDate fim = inicio.minusDays(1) ;
+		//DateTime horarioSessao = inicio.toDateTime(horario);
+		
+		Espetaculo espetaculo = new Espetaculo();
+		List<Sessao> criaSessoes = espetaculo.criaSessoes(inicio, fim, horario, Periodicidade.DIARIA);
+		
+		//Assert.assertTrue();
+	}
+	
 	private Sessao sessaoComIngressosSobrando(int quantidade) {
 		Sessao sessao = new Sessao();
 		sessao.setTotalIngressos(quantidade * 2);
