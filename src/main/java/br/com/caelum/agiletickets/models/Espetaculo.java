@@ -98,7 +98,9 @@ public class Espetaculo {
      */
 	public List<Sessao> criaSessoes(LocalDate inicio, LocalDate fim, LocalTime horario, Periodicidade periodicidade) {
 		// ALUNO: Não apague esse metodo. Esse sim será usado no futuro! ;)
-		return null;
+		
+		throw new IllegalArgumentException();
+		//return null;
 	}
 	
 	public boolean Vagas(int qtd, int min)
