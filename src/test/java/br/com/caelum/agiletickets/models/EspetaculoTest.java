@@ -96,18 +96,18 @@ public class EspetaculoTest {
 		
 	}
 	
-	@Test (expected = IllegalArgumentException.class)
+	@Test 
 	public void dataIgualADataFim(){
 		
 		LocalDate inicio = LocalDate.now();
 		LocalTime horario = LocalTime.now();
-		LocalDate fim = LocalDate.now() ;
+		LocalDate fm = LocalDate.now() ;
 		//DateTime horarioSessao = inicio.toDateTime(horario);
 		
 		Espetaculo espetaculo = new Espetaculo();
 		List<Sessao> criaSessoes = espetaculo.criaSessoes(inicio, fim, horario, Periodicidade.DIARIA);
 		
-		//assertEquals(1, criaSessoes.size());
+		assertEquals(1, criaSessoes.size());
 		
 	}
 	@ Test
