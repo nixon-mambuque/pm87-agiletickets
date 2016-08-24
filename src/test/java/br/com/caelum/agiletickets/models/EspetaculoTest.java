@@ -96,7 +96,7 @@ public class EspetaculoTest {
 		
 	}
 	
-	@Test
+	@Test 
 	public void dataIgualADataFim(){
 		
 		LocalDate inicio = LocalDate.now();
