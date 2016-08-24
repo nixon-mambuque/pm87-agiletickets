@@ -2,6 +2,7 @@ package br.com.caelum.agiletickets.models;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Calendar;
 import java.util.List;
@@ -93,7 +94,21 @@ public class EspetaculoTest {
 		Espetaculo espetaculo = new Espetaculo();
 		List<Sessao> criaSessoes = espetaculo.criaSessoes(inicio, fim, horario, Periodicidade.DIARIA);
 		
-		//Assert.assertTrue();
+	}
+	
+	@Test
+	public void dataIgualADataFim(){
+		
+		LocalDate inicio = LocalDate.now();
+		LocalTime horario = LocalTime.now();
+		LocalDate fim = LocalDate.now() ;
+		//DateTime horarioSessao = inicio.toDateTime(horario);
+		
+		Espetaculo espetaculo = new Espetaculo();
+		List<Sessao> criaSessoes = espetaculo.criaSessoes(inicio, fim, horario, Periodicidade.DIARIA);
+		
+		assertEquals(1, criaSessoes.size());
+		
 	}
 	
 	private Sessao sessaoComIngressosSobrando(int quantidade) {
